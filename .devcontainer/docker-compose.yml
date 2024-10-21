@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  devcontainer:
+    image: iotium/java-21-devcontainer:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: 21-bookworm
+    init: true
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
